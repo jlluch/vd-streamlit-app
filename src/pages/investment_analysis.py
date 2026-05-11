@@ -27,7 +27,7 @@ try:
                                  title='Inversión Global en IA Generativa', markers=True,
                                  labels={'Investment': 'Inversión (Billones USD)', 'Year': 'Año'})
             fig_global.update_layout(yaxis_title='Inversión (Billones USD)')
-            st.plotly_chart(fig_global, use_container_width=True)
+            st.plotly_chart(fig_global, width='stretch')
         else:
             st.warning("Datos de inversión global en IA generativa no disponibles.")
 
@@ -38,7 +38,7 @@ try:
                                   title='Inversión Privada Total en IA', markers=True,
                                   labels={'Investment': 'Inversión (Billones USD)', 'Year': 'Año'})
             fig_private.update_layout(yaxis_title='Inversión (Billones USD)')
-            st.plotly_chart(fig_private, use_container_width=True)
+            st.plotly_chart(fig_private, width='stretch')
         else:
             st.warning("Datos de inversión privada total en IA no disponibles.")
 
@@ -94,7 +94,7 @@ try:
                     labels={'Inversión (Billones USD)': 'Inversión (Billones USD)', 'Year': 'Año'}
                 )
                 fig_comparison.update_layout(yaxis_title='Inversión (Billones USD)')
-                st.plotly_chart(fig_comparison, use_container_width=True)
+                st.plotly_chart(fig_comparison, width='stretch')
             else:
                 st.warning("No hay datos coincidentes por año para la comparación mundial.")
         else:

@@ -90,7 +90,7 @@ def annual_papers():
                 'Number of articles': ':,d' # Format number with comma and as integer
             }
         )
-        st.plotly_chart(fig, use_container_width=True) # ensure use_container_width
+        st.plotly_chart(fig, width='stretch') # ensure use_container_width
     else:
         # Bar chart for a single selected entity
         entity_df = df[df['Entity'] == entity]
@@ -102,7 +102,7 @@ def annual_papers():
                      x='Year',
                      y='Number of articles',
                      title=f'Publicaciones anuales de {entity}')
-        st.plotly_chart(fig, use_container_width=True) # ensure use_container_width
+        st.plotly_chart(fig, width='stretch') # ensure use_container_width
 
 @st.cache_data
 def load_global_investment_data():
@@ -158,7 +158,7 @@ def global_investment():
         xaxis_title="Año",
         yaxis_title="Inversión Mundial (miles de millones USD)"
     )
-    st.plotly_chart(fig_line, use_container_width=True)
+    st.plotly_chart(fig_line, width='stretch')
 
     st.subheader("Estadísticas Clave de Inversión")
     
@@ -777,7 +777,7 @@ def annual_investment_map_folium():
             yaxis_title="Inversión (miles de millones USD)",
             showlegend=False
         )
-        st.plotly_chart(fig_bar, use_container_width=True)
+        st.plotly_chart(fig_bar, width='stretch')
     else:
         st.info(f"No hay datos de inversión por región para el año {selected_year} para mostrar en el gráfico de barras.")
     
@@ -816,4 +816,4 @@ def annual_investment_map_folium():
             xaxis_title="Año",
             yaxis_title="Inversión (miles de millones USD)"
         )
-        st.plotly_chart(fig_line, use_container_width=True)
+        st.plotly_chart(fig_line, width='stretch')
